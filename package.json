@@ -1,0 +1,37 @@
+{
+  "name": "learn_material-ui",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "lint": "eslint src/*.js",
+    "lint-fix": "eslint src/*.js --fix",
+    "dev": "next src",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.2.0",
+    "@material-ui/icons": "^4.2.1",
+    "lodash": "^4.17.11",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.0.1",
+    "eslint-plugin-react": "^7.14.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkw855/learn_material-ui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kkw855/learn_material-ui/issues"
+  },
+  "homepage": "https://github.com/kkw855/learn_material-ui#readme"
+}
