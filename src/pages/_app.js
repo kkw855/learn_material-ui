@@ -1,7 +1,10 @@
 import React from 'react'
-import App, { Container } from 'next/app'
-// import { loadCSS, onloadCSS } from 'fg-loadcss/src/loadCSS'
-import { loadCSS } from 'fg-loadcss'
+import {loadCSS} from 'fg-loadcss'
+import App, {Container} from 'next/app'
+import NextHead from 'next/head'
+import {ThemeProvider} from '@material-ui/styles'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import theme from '../theme'
 
 // Add the strict mode back once the number of warnings is manageable.
 // We might miss important warnings by keeping the strict mode 🌊🌊🌊.
@@ -24,10 +27,15 @@ function loadDependencies() {
     document.querySelector('#material-icon-font'),
   )
   fontIcons.onloadcssdefined(() => console.log('material-icon-font has loaded.'))
+
+  loadCSS(
+    'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap',
+    document.querySelector('#roboto-font')
+  )
 }
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
+  static async getInitialProps({Component, ctx}) {
     console.log('App getInitialProps()')
     let pageProps = {}
 
@@ -35,21 +43,35 @@ class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx)
     }
 
-    return { pageProps }
+    return {pageProps}
   }
 
+  // only client side
   componentDidMount() {
     loadDependencies()
+
+    // Remove the server-side injected CSS.
+    const jssStyles = document.querySelector('#jss-server-side')
+    if (jssStyles) {
+      jssStyles.parentNode.removeChild(jssStyles)
+    }
   }
 
   render() {
     console.log('App render()')
-    const { Component, pageProps } = this.props
+    const {Component, pageProps} = this.props
 
     return (
       <ReactMode>
         <Container>
-          <Component {...pageProps} />
+          <NextHead>
+            <title>Learning Material-UI</title>
+          </NextHead>
+          <ThemeProvider theme={theme}>
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <CssBaseline/>
+            <Component {...pageProps} />
+          </ThemeProvider>
         </Container>
       </ReactMode>
     )

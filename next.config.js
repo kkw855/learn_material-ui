@@ -1,5 +1,5 @@
 module.exports = {
   env: {
-    USE_STRICT_MODE: true,
+    USE_STRICT_MODE: false,
   },
 }

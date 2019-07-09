@@ -24,6 +24,7 @@ module.exports = {
   rules: {
     semi: ['error', 'never'],
     quotes: ['error', 'single'],
-    'no-console': 'off'
+    'no-console': 'off',
+    'jsx-quotes': ['error', 'prefer-single']
   }
 }
