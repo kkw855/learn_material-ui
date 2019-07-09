@@ -4,8 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "lint": "eslint src/*.js",
-    "lint-fix": "eslint src/*.js --fix",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --fix",
     "dev": "next src",
     "build": "next build",
     "start": "next start"
