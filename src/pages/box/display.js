@@ -76,6 +76,29 @@ const Page = () => {
           Text Overflow Ellipsis. Text Overflow Ellipsis
         </Box>
       </div>
+
+      <Typography variant={'h5'}>Visibility</Typography>
+      <div className={classes.container}>
+        <Box component='span' visibility='visible' p={1} m={1} bgcolor='background.paper'>
+          Visibility Visible
+        </Box>
+        <Box component='span' visibility='hidden' p={1} m={1} bgcolor='background.paper'>
+          Visibility Hidden
+        </Box>
+        <Box component='span' visibility='visible' p={1} m={1} bgcolor='background.paper'>
+          Visibility Visible
+        </Box>
+      </div>
+
+      <Typography variant={'h5'}>White Space</Typography>
+      <div style={{ width: 200 }}>
+        <Box whiteSpace={'nowrap'}>
+          White Space Nowrap. White Space Nowrap.
+        </Box>
+        <Box whiteSpace={'normal'}>
+          White Space Normal. White Space Normal.
+        </Box>
+      </div>
     </React.Fragment>
   )
 }
