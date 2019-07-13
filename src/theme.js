@@ -1,4 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles'
+import { orange } from '@material-ui/core/colors'
 
 const values = {
   xs: 0,
@@ -13,6 +14,9 @@ const theme = createMuiTheme({
   breakpoints: {
     keys: ['xs', 'sm', 'md', 'lg', 'xl'],
     up: key => `@media (min-width:${values[key]}px)`,
+  },
+  status: {
+    danger: orange[500]
   },
 })
 
