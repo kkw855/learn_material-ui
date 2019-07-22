@@ -9,4 +9,11 @@ function calculateTotalPrice(product: IProduct, quantity: number, discount: numb
   return priceWithoutDiscount - discountAmount
 }
 
+export enum OrderStatus {
+  Paid = 0,
+  Shipped,
+  Completed,
+  Cancelled
+}
+
 export default calculateTotalPrice

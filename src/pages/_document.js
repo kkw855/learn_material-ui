@@ -71,8 +71,8 @@ class MyDocument extends Document {
           <style id='roboto-font' />
         </Head>
         <body className='custom_class'>
-        <Main/>
-        <NextScript/>
+          <Main />
+          <NextScript />
         </body>
       </Html>
     )

@@ -1,4 +1,8 @@
 module.exports = {
+  env: {
+    browser: true,
+    node: true,
+  },
   parser: '@typescript-eslint/parser',
   plugins: [
     '@typescript-eslint'
@@ -10,11 +14,21 @@ module.exports = {
     'plugin:react/recommended'
   ],
   rules: {
+    semi: ['error', 'never'],
     "indent": "off",
     "@typescript-eslint/indent": ["error", 2],
     quotes: ['error', 'single'],
     'no-console': 'off',
-    '@typescript-eslint/interface-name-prefix': ['error', 'always']
+    '@typescript-eslint/interface-name-prefix': ['error', 'always'],
+    '@typescript-eslint/explicit-function-return-type': [
+      'error',
+      {
+        allowExpressions: true,
+      }
+    ],
+    '@typescript-eslint/explicit-member-accessibility': [
+      'warn',
+    ]
   }
 
   // parser: 'babel-eslint',
