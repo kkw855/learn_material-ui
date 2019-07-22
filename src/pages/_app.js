@@ -1,8 +1,8 @@
 import React from 'react'
-import {loadCSS} from 'fg-loadcss'
-import App, {Container} from 'next/app'
+import { loadCSS } from 'fg-loadcss'
+import App, { Container } from 'next/app'
 import NextHead from 'next/head'
-import {ThemeProvider} from '@material-ui/styles'
+import { ThemeProvider } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import theme from '../theme'
 
